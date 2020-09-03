@@ -31,7 +31,7 @@ export const fetchIngredientsFailed = () => {
 export const initIngredients = () => {
   return (dispatch) => {
     axios
-      .get(process.env.REACT_APP_FIREBASE_URL)
+      .get(`${process.env.REACT_APP_FIREBASE_URL}/ingredients.json`)
       .then((response) => {
         dispatch(setIngredients(response.data));
       })
