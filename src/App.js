@@ -36,7 +36,11 @@ function App(props) {
       </Switch>
     );
   }
-  return <Layout>{routes}</Layout>;
+  return (
+    <React.Suspense fallback={<div>Loading...</div>}>
+      <Layout>{routes}</Layout>
+    </React.Suspense>
+  );
 }
 
 const mapStateToProps = (state) => {
