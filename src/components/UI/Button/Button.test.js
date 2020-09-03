@@ -8,3 +8,11 @@ test("renders button with text", () => {
   expect(button).toBeDisabled();
   expect(button).toBeInTheDocument();
 });
+
+test("render button snapshot", () => {
+  jest.mock("./Button.module.css", () => ({}));
+  const { container } = render(
+    <Button btnType={"Success"}>Hello World</Button>
+  );
+  expect(container.firstChild).toMatchSnapshot();
+});

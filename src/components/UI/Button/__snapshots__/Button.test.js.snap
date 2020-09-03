@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render button snapshot 1`] = `
+<button
+  class="Button Success"
+>
+  Hello World
+</button>
+`;
