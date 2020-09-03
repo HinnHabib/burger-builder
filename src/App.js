@@ -15,6 +15,15 @@ const asyncOrders = React.lazy(() => import("./containers/Orders/Orders"));
 
 const asyncAuth = React.lazy(() => import("./containers/Auth/Auth"));
 
+function doSomething(condition) {
+  try {
+    JSON.stringify(condition);
+    return true;
+  } catch (e) {
+    console.error(e);
+  }
+}
+
 function App(props) {
   let routes = (
     <Switch>
@@ -23,6 +32,9 @@ function App(props) {
       <Redirect to="/" />
     </Switch>
   );
+
+  const isAuth = doSomething({ a: 1 }) + 5;
+  console.log(isAuth);
 
   if (props.isAuthenticated) {
     routes = (
