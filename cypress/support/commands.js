@@ -23,3 +23,28 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
+
+Cypress.Commands.add("login", () => {
+  cy.log("Login");
+  return cy
+    .request({
+      method: "POST",
+      url: `https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword?key=${Cypress.env(
+        "FIREBASE_KEY"
+      )}`,
+      body: {
+        email: "someone@fake.com",
+        password: "123123",
+        returnSecureToken: true,
+      },
+    })
+    .then(({ body }) => {
+      cy.window({ log: false }).then((win) => {
+        return win.store.dispatch({
+          type: "AUTH_SUCCESS",
+          idToken: body.idToken,
+          userId: body.userId,
+        });
+      });
+    });
+});

@@ -1,4 +1,5 @@
 {
+  "baseUrl": "http://localhost:3000/",
   "projectId": "bcqbp1",
   "env": {
     "FIREBASE_KEY": "AIzaSyBQ1kZviUNMJNYG_PezyUSawxN1JcHOD28"
