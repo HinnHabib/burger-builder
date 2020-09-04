@@ -11,7 +11,7 @@ const toolbar = (props) => (
     <div className={classes.Logo}>
       <Logo />
     </div>
-    <nav className={classes.DesktopOnly}>
+    <nav className={classes.DesktopOnly} data-cy="toolbar">
       <NavigationItems isAuthenticated={props.isAuth} />
     </nav>
   </header>

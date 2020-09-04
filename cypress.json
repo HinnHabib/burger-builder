@@ -1,3 +1,6 @@
 {
-  "projectId": "bcqbp1"
+  "projectId": "bcqbp1",
+  "env": {
+    "FIREBASE_KEY": "AIzaSyBQ1kZviUNMJNYG_PezyUSawxN1JcHOD28"
+  }
 }

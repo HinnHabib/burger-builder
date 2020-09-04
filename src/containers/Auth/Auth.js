@@ -18,6 +18,7 @@ class Auth extends Component {
           type: "email",
           placeholder: "Mail Address",
           id: "email",
+          name: "email",
         },
         value: "",
         validation: {
@@ -33,6 +34,7 @@ class Auth extends Component {
           type: "password",
           placeholder: "Password",
           id: "password",
+          name: "password",
         },
         value: "",
         validation: {
@@ -124,11 +126,16 @@ class Auth extends Component {
       <div className={classes.Auth}>
         {authRedirect}
         {errorMessage}
+        <h2>{this.state.isSignup ? "SIGNIN" : "SIGNUP"}</h2>
         <form onSubmit={this.submitHandler}>
           {form}
           <Button btnType="Success">SUBMIT</Button>
         </form>
-        <Button clicked={this.switchAuthModeHandler} btnType="Danger">
+        <Button
+          clicked={this.switchAuthModeHandler}
+          btnType="Danger"
+          data-cy="auth-switch"
+        >
           SWITCH TO {this.state.isSignup ? "SIGNIN" : "SIGNUP"}
         </Button>
       </div>
