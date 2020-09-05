@@ -25,6 +25,8 @@
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
 
 Cypress.Commands.add("login", () => {
+  cy.visit("/");
+
   cy.log("Login");
   return cy
     .request({
@@ -40,6 +42,12 @@ Cypress.Commands.add("login", () => {
     })
     .then(({ body }) => {
       cy.window({ log: false }).then((win) => {
+        const expirationDate = new Date(
+          new Date().getTime() + body.expiresIn * 1000
+        );
+        localStorage.setItem("token", body.idToken);
+        localStorage.setItem("expirationDate", expirationDate);
+        localStorage.setItem("userId", body.localId);
         return win.store.dispatch({
           type: "AUTH_SUCCESS",
           idToken: body.idToken,
