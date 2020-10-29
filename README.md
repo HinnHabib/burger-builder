@@ -1,3 +1,9 @@
+# E2E Testing with Cypress:
+
+[Session Recording](https://www.habibhinn.me/blog/introduction-to-e2e-testing-with-cypress)
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
