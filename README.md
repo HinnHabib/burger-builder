@@ -1,8 +1,10 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/58ce1cb7-86a7-402b-ab04-df31c8915a41/deploy-status)](https://app.netlify.com/sites/burger-builder-cypress/deploys)
+
 # E2E Testing with Cypress:
 
 [Session Recording](https://www.habibhinn.me/blog/introduction-to-e2e-testing-with-cypress)
 
-
+## 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
